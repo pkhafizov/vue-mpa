@@ -22,9 +22,7 @@
 </template>
 
 <script>
-import {
-  mapActions
-} from "vuex";
+import { mapActions } from "vuex";
 // @ is an alias to /src
 import Header from "@/components/Header.vue";
 
@@ -34,7 +32,7 @@ export default {
     Header
   },
   computed: {
-    posts: function () {
+    posts: function() {
       return this.$store.state.posts;
     }
   },

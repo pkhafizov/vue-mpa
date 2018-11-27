@@ -11,10 +11,19 @@
 
 <script>
 export default {
-
-}
+  mounted: function() {
+    this.$store
+      .dispatch("getPosts")
+      .then(() => console.log(this.$store.state.posts));
+    console.log("jumbotron: ", this.$route);
+  },
+  computed: {
+    posts: function() {
+      return this.$store.state.posts;
+    }
+  }
+};
 </script>
 
 <style scoped>
-
 </style>
