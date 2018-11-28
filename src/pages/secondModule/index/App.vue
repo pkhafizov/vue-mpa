@@ -1,6 +1,6 @@
 <template>
     <div id="app">
-        <Header nameModule="second"/>
+        <Header nameModule="secondModule"/>
         <div class="row">
             <div class="container">
                 <router-view></router-view>
@@ -10,13 +10,12 @@
 </template>
 
 <script>
-import Header from '../../../components/Header';
+import Header from "../../../components/Header";
 export default {
-    name: 'app',
-    components: { Header }
-}
+  name: "app",
+  components: { Header }
+};
 </script>
 
 <style scoped>
-
 </style>

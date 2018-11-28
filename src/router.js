@@ -8,16 +8,16 @@ Vue.use(Router);
 export default new Router({
   mode: 'history',
   base: process.env.BASE_URL,
-  routes: [
-    {
+  routes: [{
       path: '/',
       name: 'main',
       component: Home,
     },
     {
-      path: '/firstModule/',
+      path: '/:nameModule/',
       name: 'firstModule',
       component: homeJumbotron,
+      props: true,
     },
   ],
 });

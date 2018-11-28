@@ -11,11 +11,20 @@
 
 <script>
 export default {
+  props: {
+    nameModule: {
+      type: String,
+      required: true,
+      validator(value) {
+        return ["main", "firstModule", "secondModule"].includes(value);
+      }
+    }
+  },
   mounted: function() {
     this.$store
       .dispatch("getPosts")
       .then(() => console.log(this.$store.state.posts));
-    console.log("jumbotron: ", this.$route);
+    console.log("jumbotron: ", this.nameModule);
   },
   computed: {
     posts: function() {

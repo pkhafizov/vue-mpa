@@ -26,15 +26,15 @@
                         <li class="nav-item">
                             <a
                                 class="nav-link"
-                                :class="{active: nameModule === 'first'}"
-                                @click="moveModule1"
+                                :class="{active: nameModule === 'firstModule'}"
+                                @click="moveFirstModule"
                             >First module</a>
                         </li>
                         <li class="nav-item">
                             <a
                                 class="nav-link"
-                                :class="{active: nameModule === 'second'}"
-                                @click="moveModule2"
+                                :class="{active: nameModule === 'secondModule'}"
+                                @click="moveSecondModule"
                             >Second module</a>
                         </li>
                     </ul>
@@ -46,32 +46,36 @@
 
 <script>
 export default {
-    name: 'Header',
-    props: {
-        nameModule: {
-            type: String,
-            required: true,
-            validator(value) {
-                return ['main', 'first', 'second'].includes(value);
-            }
-        }
-    },
-    methods: {
-        moveMain() {
-            location.assign('/');
-        },
-        moveModule1() {
-            location.assign('../firstModule/');
-        },
-        moveModule2() {
-            location.assign('../secondModule/');
-        }
+  name: "Header",
+  props: {
+    nameModule: {
+      type: String,
+      required: true,
+      validator(value) {
+        return ["main", "firstModule", "secondModule"].includes(value);
+      }
     }
-}
+  },
+  methods: {
+    moveMain() {
+      location.assign("/");
+    },
+    moveFirstModule() {
+      location.assign("../firstModule/");
+    },
+    moveSecondModule() {
+      location.assign("../secondModule/");
+    }
+  }
+};
 </script>
 
 <style scoped>
 a {
-    cursor: pointer;
+  cursor: pointer;
+}
+
+.nav-link.active {
+  text-decoration: underline;
 }
 </style>
